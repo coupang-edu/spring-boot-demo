@@ -23,12 +23,12 @@ public class CommentController {
     @PostMapping("/comments")
     public RedirectView commentCreate(@ModelAttribute CommentDto commentDto) {
         commentService.create(commentDto);
-        return new RedirectView("/comments");
+        return new RedirectView("/");
     }
 
     @DeleteMapping("/comments/{id}")
     public RedirectView commentDelete(@PathVariable Long id) {
         commentService.delete(id);
-        return new RedirectView("/comments");
+        return new RedirectView("/");
     }
 }
